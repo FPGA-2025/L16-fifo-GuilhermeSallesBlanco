@@ -1,0 +1,60 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Teste 0
+      id: teste-0
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Teste 0
+        setup-command: "./setup.sh"
+        command: "./run.sh 0"
+        timeout: 10
+        max-score: 1
+    - name: Teste 1
+      id: teste-1
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Teste 1
+        setup-command: "./setup.sh"
+        command: "./run.sh 1"
+        timeout: 10
+        max-score: 1
+    - name: Teste 2
+      id: teste-2
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Teste 2
+        setup-command: "./setup.sh"
+        command: "./run.sh 2"
+        timeout: 10
+        max-score: 1
+    - name: Teste 3
+      id: teste-3
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Teste 3
+        setup-command: "./setup.sh"
+        command: "./run.sh 3"
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TESTE-0_RESULTS: "${{steps.teste-0.outputs.result}}"
+        TESTE-1_RESULTS: "${{steps.teste-1.outputs.result}}"
+        TESTE-2_RESULTS: "${{steps.teste-2.outputs.result}}"
+        TESTE-3_RESULTS: "${{steps.teste-3.outputs.result}}"
+      with:
+        runners: teste-0,teste-1,teste-2,teste-3
