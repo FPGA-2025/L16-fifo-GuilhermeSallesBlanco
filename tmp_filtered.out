@@ -1,0 +1,16 @@
+WARNING: tb.v:35: $readmemb(teste.txt): Not enough words in the file for the requested range [0:8].
+VCD info: dumpfile saida.vcd opened for output.
+rstn=0, wr_en=0, rd_en=0, data_in=00000000, data_out=xxxxxxxx, full=0, empty=1
+rstn=1, wr_en=1, rd_en=0, data_in=00000000, data_out=xxxxxxxx, full=0, empty=1
+rstn=1, wr_en=1, rd_en=0, data_in=00000000, data_out=xxxxxxxx, full=0, empty=0
+rstn=1, wr_en=1, rd_en=0, data_in=00000001, data_out=xxxxxxxx, full=0, empty=0
+rstn=1, wr_en=1, rd_en=0, data_in=00000010, data_out=xxxxxxxx, full=0, empty=0
+rstn=1, wr_en=1, rd_en=0, data_in=00000010, data_out=xxxxxxxx, full=1, empty=0
+rstn=1, wr_en=0, rd_en=1, data_in=00000000, data_out=xxxxxxxx, full=1, empty=0
+rstn=1, wr_en=0, rd_en=1, data_in=00000000, data_out=00000000, full=0, empty=0
+rstn=1, wr_en=1, rd_en=0, data_in=00000100, data_out=00000000, full=0, empty=0
+rstn=1, wr_en=1, rd_en=0, data_in=00000100, data_out=00000000, full=1, empty=0
+rstn=1, wr_en=0, rd_en=1, data_in=00000000, data_out=00000000, full=1, empty=0
+rstn=1, wr_en=0, rd_en=1, data_in=00000000, data_out=00000001, full=0, empty=0
+rstn=1, wr_en=0, rd_en=1, data_in=00000000, data_out=00000010, full=0, empty=0
+rstn=x, wr_en=x, rd_en=x, data_in=xxxxxxxx, data_out=00000010, full=0, empty=0
